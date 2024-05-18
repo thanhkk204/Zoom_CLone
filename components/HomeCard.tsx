@@ -12,11 +12,11 @@ export default function HomeCard({img, description, title, handleClick, bgColor}
   return (
     <div 
      onClick={handleClick}
-    className={`${bgColor} px-3 py-4 w-full sm:min-w-[270px] min-h-[260px] rounded-xl cursor-pointer flex flex-col justify-between`}
+    className={`${bgColor} px-3 py-4 w-full sm:min-w-[270px] sm:max-w-[450px] min-h-[260px] rounded-xl cursor-pointer flex flex-col justify-between`}
     >
     <div className='glassmorphism size-12 rounded-lg flex items-center justify-center'>
         <Image
-        src="/icons/add-personal.svg"
+        src={img}
         alt={title}
         width={27}
         height={27}
