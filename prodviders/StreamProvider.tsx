@@ -17,8 +17,6 @@ const API_KEY = process.env.NEXT_PUBLIC_STREAM_KEY
 const StreamProvider = ({ children }: { children: ReactNode }) => {
   const [videoClient, setVideoClient] = useState<StreamVideoClient>()
   const { user, isLoaded } = useUser()
-  
-  
 
   useEffect(() => {
     if (!user || !isLoaded) return

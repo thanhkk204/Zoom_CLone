@@ -4,7 +4,7 @@ import HomeCard from "./HomeCard"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import MeetingModel from "./MeetingModel"
-import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk"
+import { Call, useCallStateHooks, useStreamVideoClient } from "@stream-io/video-react-sdk"
 import { useUser } from "@clerk/nextjs"
 import { toast } from "./ui/use-toast"
 
@@ -22,6 +22,8 @@ export default function MeetingTypeList() {
   const client = useStreamVideoClient()
   const { user } = useUser()
   const [detailCall, setDetailCall] = useState<Call>()
+
+ 
 
   const createMeeting = async () => {
     if (!user || !client) return
@@ -58,7 +60,6 @@ export default function MeetingTypeList() {
       toast({ title: 'Failed to create Meeting' });
     }
   }
-  console.log(detailCall)
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-5 ">
       <HomeCard

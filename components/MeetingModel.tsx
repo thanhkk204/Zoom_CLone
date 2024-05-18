@@ -34,7 +34,7 @@ export default function MeetingModel({
 }: MeetingModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-dark-1">
+      <DialogContent className="bg-dark-1 border-none">
         <div className="w-full md:max-w-[520px]  flex flex-col items-center gap-5 py-6 px-4">
           <div className="flex items-center ">
             {image && (
