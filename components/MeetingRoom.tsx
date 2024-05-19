@@ -18,9 +18,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import React, { useState } from "react"
 import { LayoutList, Users } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 type CallLayoutType = "grid" | "speaker-left" | "speaker-right"
 export default function MeetingRoom() {
+  const router = useRouter()
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left")
   const [showParticipant, setShowParticipant] = useState(false)
   const { useParticipants, useLocalParticipant } = useCallStateHooks()
@@ -54,7 +56,7 @@ export default function MeetingRoom() {
         </div>
       {/* CallControl */}
       <div className="fixed bottom-0 w-full flex items-center justify-center gap-5">
-        <CallControls />
+        <CallControls onLeave={()=> router.push('/')}/>
 
         <DropdownMenu>
           <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">

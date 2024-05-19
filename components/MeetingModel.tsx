@@ -31,36 +31,35 @@ export default function MeetingModel({
   buttonIcon,
   handleClick,
   title,
+  children
 }: MeetingModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-dark-1 border-none">
-        <div className="w-full md:max-w-[520px]  flex flex-col items-center gap-5 py-6 px-4">
-          <div className="flex items-center ">
+        <div className="w-full md:max-w-[520px]  flex flex-col items-center gap-5 py-4 px-2">
+          <div className="flex flex-col items-center gap-3">
             {image && (
               <Image src={image} alt="title image" width={72} height={72} />
             )}
             <h2 className="text-white text-3xl font-bold">{title}</h2>
           </div>
-
-          <div className="w-full">
-            <DialogClose className="w-full outline-none border-none">
+           {children && children}
+          <div className="w-full border-none">
               <Button
-                className="w-full bg-blue-1 py-6 px-2 text-white text-[19px]"
+                className="w-full bg-blue-1 py-6 px-2 text-white text-[19px] focus-visible:ring-0 focus-visible:ring-offset-0"
                 onClick={handleClick}
               >
                 {buttonIcon && (
                   <Image
                     src={buttonIcon}
                     alt="Button Icon"
-                    width={13}
-                    height={13}
+                    width={18}
+                    height={18}
                   />
                 )}{" "}
                 &nbsp;
                 {buttonText || "Schedule Meeting"}
               </Button>
-            </DialogClose>
           </div>
         </div>
       </DialogContent>

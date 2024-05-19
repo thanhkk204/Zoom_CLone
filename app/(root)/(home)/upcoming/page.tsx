@@ -1,7 +1,10 @@
+import CallList from '@/components/CallList'
 import React from 'react'
 
 export default function UpcomingPage() {
   return (
-    <div>UpcomingPage</div>
+   <>
+    <CallList type='upcoming'/>
+   </>
   )
 }
