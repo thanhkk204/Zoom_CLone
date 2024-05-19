@@ -5,10 +5,12 @@ import { ReactNode } from 'react';
 
 
 export const metadata: Metadata = {
-  title: 'YOOM',
-  description: 'A workspace for your team, powered by Stream Chat and Clerk.',
-};
-
+  title: "Yoom",
+  description: "Video calling app",
+  icons: {
+    icon: '/icons/logo.svg'
+  }
+}
 const RootLayout = ({ children }: Readonly<{children: ReactNode}>) => {
   return (
     <main className="relative">

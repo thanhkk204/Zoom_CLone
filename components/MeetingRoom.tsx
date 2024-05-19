@@ -40,12 +40,25 @@ export default function MeetingRoom() {
   return (
     <div className="w-full h-screen text-white relative">
       <div className="size-full flex items-center justify-center">
-        <div className="size-full max-w-[1000px] flex items-center justify-center">
+        <div className="size-full max-w-[1200px] flex items-center justify-center">
           <GetLayout />
         </div>
-      </div>
+        
+      {/* 
         <div
           className={cn("h-screen absolute top-0 right-0 hidden ml-3", {
+            block: showParticipant,
+          })}
+        >
+            <div className="bg-dark-1 py-4 px-3 h-full">
+
+          <CallParticipantsList onClose={() => setShowParticipant(false)} />
+            </div>
+        </div> */}
+
+      </div>
+        <div
+          className={cn("h-screen absolute top-0 right-0 min-w-[450px] hidden ml-3", {
             block: showParticipant,
           })}
         >
@@ -78,7 +91,7 @@ export default function MeetingRoom() {
             <DropdownMenuSeparator />
           </DropdownMenuContent>
         </DropdownMenu>
-        <CallStatsButton />
+        {/* <CallStatsButton /> */}
 
         <button onClick={() => setShowParticipant((prev) => !prev)}>
           <div className=" cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
